@@ -1,9 +1,7 @@
 const express= require('express')
 const router = express.Router()
 const path = require('path')
-const mongoose = require('mongoose')
 const HighScore = require('../mongoose/db')
-mongoose.connect('mongodb://localhost/highScoreDB', {useNewUrlParser: true})
 
 router.get('/try', function(req, res){
     console.log('Someone is playing the game')
