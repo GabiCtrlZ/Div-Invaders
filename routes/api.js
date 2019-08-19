@@ -17,18 +17,6 @@ router.get('/highGlobal', function(req, res){
 
 router.post('/sendScore', function(req, res){
     let data = req.body
-    if (data.name.length > 6 || data.score.length > 3 || data.time.length > 4){
-        data = ''
-        console.log('data was not right')
-        return res.end()
-    }
-    if ((typeof data.score) != 'number' || (typeof data.time) != 'number'){
-        console.log(typeof data.score)
-        console.log(typeof data.time)
-        data = ''
-        console.log('dataaa was not right')
-        return res.end()
-    }
     const d = new HighScore(data)
     d.save()
     console.log(d + "was saved")
